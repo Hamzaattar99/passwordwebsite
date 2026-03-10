@@ -1,0 +1,10 @@
+.generator-section {
+    background-color: #0f172a;
+    min-height: 100vh;
+}
+
+.generator-card {
+    background: #1e293b;
+    color: #ffffff;
+    border-radius: 12px;
+}

@@ -1,0 +1,19 @@
+.breach-section {
+    min-height: 80vh;
+}
+
+.breach-card {
+    max-width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: #1e293b;
+    border: none;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.breach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}

@@ -1,0 +1,30 @@
+.report-section {
+    min-height: 100vh;
+    padding-top: 100px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+
+
+.report-card {
+    background-color: #1e293b;
+    border: none;
+    border-radius: 16px;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.progress {
+    height: 20px;
+    background-color: #334155;
+}
+
+.progress-bar {
+    transition: width 0.6s ease;
+    font-weight: bold;
+}

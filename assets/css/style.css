@@ -1,0 +1,149 @@
+/* ==============================
+   General Dark Theme
+   ============================== */
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==============================
+   Navbar
+   ============================== */
+/*.custom-navbar {
+    background-color: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(8px);
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #3b82f6;
+} */
+
+/* ==============================
+   Hero Section
+   ============================== */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding-top: 100px; /* ليكون بعيد عن الـ fixed navbar */
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .container {
+    max-width: 900px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Form inside Hero Section */
+#passwordForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    #passwordForm {
+        flex-direction: row; /* أفقي للشاشات المتوسطة والكبيرة */
+    }
+}
+
+.hero-input {
+    max-width: 400px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+.hero-input:focus {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+    outline: none;
+}
+
+.hero-btn {
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   Feature Cards
+   ============================== */
+.feature-card {
+    background-color: #293a57;
+    border: 1px solid rgba(43, 22, 121, 0.253);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card h5 {
+    color: #94a3b8;
+}
+
+/* Feature Cards Paragraphs */
+.container p {
+    color: #ffffff; /* أبيض */
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+.footer-section {
+    background-color: #0b1120;
+    color: #94a3b8;
+    padding: 1.5rem 0;
+}
+
+/* ==============================
+   Responsive Tweaks
+   ============================== */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .hero-input {
+        max-width: 100%;
+    }
+
+    .feature-card {
+        padding: 1.5rem 1rem;
+    }
+}
