@@ -12,15 +12,44 @@ document.addEventListener("DOMContentLoaded", function () {
     const aiScore = document.getElementById("aiScore");
     const chartCanvas = document.getElementById("charChart");
 
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const timeoutLocalAnalysis = setTimeout(() => {
+
+        console.log("30 seconds passed, aborting fetch and running local analysis");
+        controller.abort();
+
+
+        const script = document.createElement("script");
+        script.src = "assets/js/report.js";
+        script.onload = function () {
+            runLocalAnalysis(password);
+
+        };
+
+        document.body.appendChild(script);
+    }, 30000);
+
+
+
+
+
+
     fetch("api/analyze.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ password: password })
+        body: JSON.stringify({ password: password }),
+
+        signal: signal
     })
     .then(res => res.json())
     .then(data => {
+
+        clearTimeout(timeoutLocalAnalysis);
 
         if (data.error) {
             aiScore.textContent = "Analysis failed";
@@ -129,7 +158,19 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(err => {
        // console.error("Fetch error:", err)
-        aiScore.textContent = "Connection failed";
+        clearTimeout(timeoutLocalAnalysis);
+        if(err.name == "AbortError")
+        {
+            console.log("Fetch aborted after 30 seconds");
+        }
+        else
+        {
+            console.log("Fetch: ", err);
+        }
+
+
+
+       // aiScore.textContent = "Connection failed";
 
 
         const script = document.createElement("script");
